@@ -7,13 +7,7 @@ RUN cd /tmp && \
     yum -y clean all && \
     rm -f plexmediaserver-*
 
-ENV chef_node_name plex.docker.local
-#ENV chef_run_list plex 
-
-COPY plex /etc/sysconfig/plex
-COPY start-plex.sh /usr/local/bin/start-plex.sh
 COPY services/* /etc/supervisord.d/
 COPY preboot/* /preboot/ 
 
-#COPY cookbooks/ /chef/cookbooks/
 ENV HPESS_ENV plex
