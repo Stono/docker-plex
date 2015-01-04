@@ -10,4 +10,5 @@ RUN cd /tmp && \
 COPY services/* /etc/supervisord.d/
 COPY preboot/* /preboot/ 
 
+EXPOSE 32400 1900 5353 32410 32469
 ENV HPESS_ENV plex
