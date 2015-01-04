@@ -19,7 +19,8 @@ Plex has been configured to use /storage/plex for its configuration, this will b
 ## Ports
 In the above example, i'm only forwarding the ports for web access, however, all services are running so you can forward the other ports if you need them.  They are (as taken from the plex website):
 ```
-The most important port to make sure your firewall allows is the main TCP port the Plex Media Server uses for communication:
+The most important port to make sure your firewall allows is the 
+main TCP port the Plex Media Server uses for communication:
   TCP: 32400 (for access to the Plex Media Server) [required]
 The following ports are also used for different services:
   UDP: 1900 (for access to the Plex DLNA Server)
