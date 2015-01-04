@@ -16,6 +16,18 @@ And then you can start with `fig up -d`, give it a couple of seconds and then yo
 ## Storage/Backup
 Plex has been configured to use /storage/plex for its configuration, this will be owned by the "docker" user and "docker" group, (uid, gid both 1250).  If you mount the directory in as I have done in the fig file, /storage will be created.  You only ever need to back this directory up, and to restore plex to a fully working state - you simply download this docker container somewhere else, and add the storage directory.
 
+## Ports
+In the above example, i'm only forwarding the ports for web access, however, all services are running so you can forward the other ports if you need them.  They are (as taken from the plex website):
+```
+The most important port to make sure your firewall allows is the main TCP port the Plex Media Server uses for communication:
+  TCP: 32400 (for access to the Plex Media Server) [required]
+The following ports are also used for different services:
+  UDP: 1900 (for access to the Plex DLNA Server)
+  UDP: 5353 (for older Bonjour/Avahi network discovery)
+  UDP: 32410, 32412, 32413, 32414 (for current network discovery)
+  TCP: 32469 (for access to the Plex DLNA Server)
+```
+
 ## A note on file permissions and ownership
 The account plex runs under (docker:docker) needs read/write to the configuration directory.  If you're mounting in a directory created by another installation of plex - the container will do "chown -R 1250:1250 /storage/plex" at first boot.
 
